@@ -31,9 +31,6 @@ function App() {
 		return unsubscribe;
 	}, []);
 
-
-function App() {
-
   return (
     <Router>
       <Switch>
