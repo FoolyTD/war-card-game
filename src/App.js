@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   /* 
-	this deck variable is going to hold a string which is the deck id that returns from
+	  this deck variable is going to hold a string which is the deck id that returns from
 		our fetch call to our api "http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1" 
 	*/
   const [deck, setDeck] = useState([]);
@@ -39,7 +39,7 @@ function App() {
         setPlayerCard(payload.cards[0]);
         setOpponentCard(payload.cards[1]);
       })
-      .then(setRoundOver(true));
+     .then(setRoundOver(true));
   };
 
   const resolveRound = () => {
@@ -60,14 +60,12 @@ function App() {
                 <p className="card-text">Your Card</p>
               </div>
               <div className="card">
-                <img src={opponentCard && opponentCard.image} />
+                {(opponentCard && playerCard) && <img src={opponentCard && playerCard.image} alt="" />}
               </div>
             </div>
             <div className="card-container">
               <p className="outcome-text">
-                {playerCard &&
-                  opponentCard &&
-                  (score > 0 ? "You won" : " You Lost")}
+                {(score ? (Number(score) === 0 ? "WAR" : (score > 0 ? "Winner Chicken Dinner" : "You Lose")): "")}
               </p>
             </div>
             <div className="card-container">
@@ -75,17 +73,19 @@ function App() {
                 <p className="card-text">Opponent's Card</p>
               </div>
               <div className="card">
-                <img src={playerCard && playerCard.image} />
+                {(playerCard && opponentCard) && <img src={playerCard && opponentCard.image} alt="" />}
               </div>
             </div>
           </div>
         <div className="btn-container">
+          <div className="steel-texture">
           <button
             className="btn"
             onClick={roundOver ? resolveRound : playCards}
           >
-            {roundOver ? "Score" : "Play Card"}
+            {roundOver ? "Score" : "Play"}
           </button>
+          </div>
         </div>
         </section>
       </div>
