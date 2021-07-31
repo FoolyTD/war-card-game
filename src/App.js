@@ -1,4 +1,4 @@
-// importing use state to hold our vaiables critical to render, use effect to load state when page mounts
+// importing use state to hold our variables critical to render, use effect to load state when page mounts
 import { useState, useEffect } from "react";
 // this function takes care of the work comparing the cards to score who won
 import scoreRound from "./scoreRound";
