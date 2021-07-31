@@ -3,9 +3,32 @@ import { useState, useEffect } from "react";
 // this function takes care of the work comparing the cards to score who won
 import scoreRound from "./scoreRound";
 // this is the style sheet
-import './App.css';
+import "./App.css";
+import { auth } from "./firebase";
+import Home from "./components/Home";
+import SignIn from "./components/SignIn";
 
 function App() {
+// To keep track of the login status of the user, we need to use the onAuthStateChange to track the login status
+	const [user, setUser] = useState(null);
+
+	useEffect(() => {
+		const unsubscribe = auth.onAuthStateChanged(userAuth => {
+			const user = {
+				uid: userAuth?.uid,
+				email: userAuth?.email
+			}
+
+			if (userAuth) {
+				console.log('userAuth', userAuth)
+				setUser(user);
+			} else {
+				setUser(null);
+			}
+		}) 
+		return unsubscribe;
+	}, [])
+
 	/* 
 	this deck variable is going to hold a string which is the deck id that returns from
 		our fetch call to our api "http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1" 
@@ -50,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+		{!user ? <SignIn /> : <Home />}
 		<div className="title">
           <h1 className="big-text">War</h1>
 		  <p></p>
