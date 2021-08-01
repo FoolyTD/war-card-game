@@ -82,6 +82,8 @@ img {
 	justify-content: center;
 	width: 600px;
 	height: 200px;
+	/* flex-direction: row; */
+	/* padding-top: 60px; */
 }
 
 .btn {
@@ -109,4 +111,31 @@ img {
 	border-radius: 10%;
 	box-shadow: 5px 5px rgb(41, 40, 40);
 
+}
+
+.war-text:hover {
+	cursor: pointer;
+}
+.game-over {
+	/* color:#ff0000; */
+}
+
+/* Score styling */
+
+.score-container {
+	display: flex;
+	flex-direction: column;
+    text-align: center;
+    font-size: smaller;
+    justify-content: center;
+    width: 200px;
+}
+.score-text {
+	height: 50px;
+}
+.score-count {
+	display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
 }
