@@ -39,9 +39,14 @@ PLAY NOW: [war card game](https://war-card-game-ten.vercel.app/home)
   -  ![game over screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-03.jpg)
 
 # DEVELOPMENT & DEV TEAM
-This application was developed with React.js, JavaScript, CSS, JSON API, Node.js, and FireBase. React, JavaScript, and CSS were used to build, style, and render the frontend. React hooks like useState, useEffect were used to hold state and render content on the page when the page mounted. Deck of Cards API ([Deck of Cards API](http://deckofcardsapi.com/)) was used to support the backend. It follows RESTful guidelines and returns JSON data. The responses from this API are how we created a unique deck for each game of WAR and tracked which cards had been played. Node.js and FireBase were used to manage user authentication. 
+This application was developed with React.js, JavaScript, CSS, JSON API, Node.js, FireBase, and Vercel. React, JavaScript, and CSS were used to build, style, and render the frontend. React hooks like useState, useEffect were used to hold state and render content on the page when the page mounted. Deck of Cards API ([Deck of Cards API](http://deckofcardsapi.com/)) was used to support the backend. It follows RESTful guidelines and returns JSON data. The responses from this API are how we created a unique deck for each game of WAR and tracked which cards had been played. Node.js and FireBase were used to manage user authentication. 
+
+DEPLOYMENT: 
+We deployed our application using Vercel ([Vercel Deployment Documentation](https://vercel.com/docs/platform/deployments)). Once your project has code that is ready for production, you can use the documentation to deploy. If you have GitHub linked to your Vercel account, deployment is made easier. After the build and deployment, our site was made available at this url([War Card Game](https://war-card-game-ten.vercel.app/home)).
 
 DEV TEAM:
+Our 3-person dev team met at the beginning of the year at Thinkful bootcamp (Go Thinkful 49ers!). If you want to contact or connect with us and stay up-to-date on our latest projects, please send connection requests on LinkedIn. 
+
 1. Theodore Jones: https://www.linkedin.com/in/theodore-jones88/
 2. Priscilla Kung: https://www.linkedin.com/in/priscillakung/
 3. Travis Cariaga: https://www.linkedin.com/in/travis-cariaga/
