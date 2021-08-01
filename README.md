@@ -13,10 +13,10 @@ The WIN CONDITION is clear: First player to get more than half the deck (27+ car
 1) Fork and clone this repository to your local machine. 
 
 2) Then, open the project folder in your terminal of choice and run npm install to install dependencies. 
-<>npm install</>
+`npm install`
 
 3) Start the app:
--npm run start
+`npm run start`
 
 # Getting Started with Create React App
 
