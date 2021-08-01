@@ -9,6 +9,14 @@ The player whose face up card has the higher value takes all the cards played!
 
 The WIN CONDITION is clear: First player to get more than half the deck (27+ cards) wins the game!
 
+# Installation and Development
+1) Fork and clone this repository to your local machine. 
+
+2) Then, open the project folder in your terminal of choice and run npm install to install dependencies. 
+-npm install
+
+3) Start the app:
+-npm run start
 
 # Getting Started with Create React App
 
