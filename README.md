@@ -1,3 +1,15 @@
+# WAR Card Game Instructions
+WAR is a two-player, turn-based card game that uses a standard 52-card deck. We shuffle the cards and then split the deck in two (26 cards per player).
+Then, both player flip the top card in their dack one at a time. Suit does not matter in this card game, only the value on the card.
+In our version of WAR, Ace is the lowest and King is the highest. The player with the highest card wins the round and takes both cards that were played.
+
+It gets interesting when BOTH player play a card with the SAME VALUE. Then, WAR is activated and each player plays 4 cards (3 face down and 1 face up).
+The player who's face up card has the higher value takes all the cards played! 
+
+The WIN CONDITION is clear: First player to get more then half the deck (27+) wins the game!
+
+This project was created with npx-create-react-app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
