@@ -18,6 +18,9 @@ The WIN CONDITION is clear: First player to get more than half the deck (27+ car
 3) Start the app:
 `npm run start`
 
+# GAMEPLAY
+![start screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg)
+https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
