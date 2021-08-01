@@ -36,6 +36,14 @@ The WIN CONDITION is clear: First player to get more than half the deck (27+ car
   - The first player to get at least half of the deck (First player to 27+) wins the game! The game will be over and a "RESTART" button will give you the option to play again.
   -  ![game over screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-03.jpg)
 
+# DEVELOPMENT & DEV TEAM
+This application was developed with React.js, JavaScript, CSS, JSON API, Node.js, and FireBase. React, JavaScript, and CSS were used to build, style, and render the frontend. React hooks like useState, useEffect were used to hold state and render content on the page when the page mounted. Deck of Cards API ([Deck of Cards API](http://deckofcardsapi.com/)) was used to support the backend. It follows RESTful guidelines and returns JSON data. The responses from this API are how we created a unique deck for each game of WAR and tracked which cards had been played. Node.js and FireBase were used to manage user authentication. 
+
+DEV TEAM:
+1. Theodore Jones: https://www.linkedin.com/in/theodore-jones88/
+2. Priscilla Kung: https://www.linkedin.com/in/priscillakung/
+3. Travis Cariaga: https://www.linkedin.com/in/travis-cariaga/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
