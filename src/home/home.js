@@ -49,9 +49,9 @@ export default function Home() {
 
   return (
         <div className="App">
-          <div className="title">
+          {/* <div className="title">
             <h1 className="big-text">War</h1>
-          </div>
+          </div> */}
           <div>
             <section className="table-container">
               <div className="card-display">
@@ -66,6 +66,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="card-container">
+                <div className="title">
+            <h1 className="big-text">War</h1>
+          </div>
                   <p className="outcome-text">
                     {score
                       ? Number(score) === 0
