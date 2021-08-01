@@ -21,12 +21,12 @@ The WIN CONDITION is clear: First player to get more than half the deck (27+ car
 # GAMEPLAY
 1. Getting Started
   - After you log in, you will be directed to the Home page. This is where the game lives. To begin playing,
-simply click the "PLAY" button and the computer will shuffle the deck, split it in two, and play 1 card for you and your opponent
+    simply click the "PLAY" button and the computer will shuffle the deck, split it in two, and play 1 card for you and your opponent
     -![start screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg)
 
 2. Scoring
   - Once the cards are played, press the "SCORE" button to reveal who won the round and allocate the cards to the appropriate player's card count
-  -   -[![score round](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-01.jpg)
+    -[![score round](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-01.jpg)
 
 # Getting Started with Create React App
 
