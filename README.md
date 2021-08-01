@@ -26,7 +26,7 @@ simply click the "PLAY" button and the computer will shuffle the deck, split it 
 
 2. Scoring
   - Once the cards are played, press the "SCORE" button to reveal who won the round and allocate the cards to the appropriate player's card count
-    -![score round](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-01.jpg)
+  -   -[![score round](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-01.jpg)
 
 # Getting Started with Create React App
 
