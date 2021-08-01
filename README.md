@@ -19,14 +19,22 @@ The WIN CONDITION is clear: First player to get more than half the deck (27+ car
 `npm run start`
 
 # GAMEPLAY
-1. Getting Started
+1. Getting Started:
   - After you log in, you will be directed to the Home page. This is where the game lives. To begin playing,
     simply click the "PLAY" button and the computer will shuffle the deck, split it in two, and play 1 card for you and your opponent
-    -![start screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg)
+    - ![start screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg)
 
-2. Scoring
-  - Once the cards are played, press the "SCORE" button to reveal who won the round and allocate the cards to the appropriate player's card count
-    -[![score round](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-01.jpg)
+2. Scoring:
+  - Once the cards are played, press the "SCORE" button to reveal who won the round and allocate the cards to the appropriate player's card count. This will
+      finish the round and display the "PLAY" button so you can play another card.
+    - ![score round screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-01.jpg)
+3. WAR: 
+  - If BOTH players' cards have the SAME VALUE, WAR will be triggered. Click "WAR" to play 3 cards face down and 1 face up for you and the opponent. Then click "SCORE"
+    (step 2 in the gamplay design) to evaluate the winner an award the cards to the winning player.
+    - ![war screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-02.jpg)
+4. WINNING:
+  - The first player to get at least half of the deck (First player to 27+) wins the game! The game will be over and a "RESTART" button will give you the option to play again.
+  -  ![game over screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-03.jpg)
 
 # Getting Started with Create React App
 
