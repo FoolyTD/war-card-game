@@ -19,8 +19,11 @@ The WIN CONDITION is clear: First player to get more than half the deck (27+ car
 `npm run start`
 
 # GAMEPLAY
+After you log in, you will be directed to the Home page. This is where the game lives. To begin playing,
+simply click the "PLAY" and the computer will shuffle the deck, split it in two, and help you and your opponent play 1 card
 ![start screen](https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg)
-https://github.com/FoolyTD/war-card-game/blob/main/design/gameplay/SC-00.jpg
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
