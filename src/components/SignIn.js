@@ -16,7 +16,7 @@ const SignIn = () => {
         console.log(user);
       })
       .catch((error) => {
-        console.log(error);
+        alert(error);
       });
   };
 
@@ -38,13 +38,13 @@ const SignIn = () => {
   return (
     <div className="signin">
       <form action="">
-        <h1>Sign In</h1>
-        <input ref={emailRef} type="email" />
-        <input ref={passwordRef} type="password" />
+        <h1>Let's Play War</h1>
+        <input ref={emailRef} type="email" placeholder="email"/>
+        <input ref={passwordRef} type="password" placeholder="password"/>
         <button onClick={signIn}>Sign In</button>
         <h6>
           First time playing? 
-          <span className="signin__link" onClick={signUp}> Sign Up</span>
+          <span className="signin__link" onClick={signUp}> Click here to sign up.</span>
         </h6>
       </form>
     </div>

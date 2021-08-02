@@ -3,14 +3,20 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.signin h1, h6 {
+  text-align: center;
+}
+
 .signin > form {
   display: grid;
   flex-direction: column;
 }
+
 .signin > form > input {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .signin__link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import scoreRound from "./scoreRound";
 // this is the style sheet
 import "../App.css";
+// this allows users to sign out of home page
+import { auth } from "../firebase";
 
 export default function Home() {
   /* 
@@ -199,6 +201,10 @@ export default function Home() {
           </div>
         </section>
       </div>
+      <p className="signout">
+        <button onClick={() => auth.signOut()}>Sign Out</button>
+      </p>
     </div>
+    
   );
 }
