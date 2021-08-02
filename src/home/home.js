@@ -36,7 +36,10 @@ export default function Home() {
   useEffect(() => {
     fetch("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
       .then((response) => response.json())
-      .then((payload) => setDeck(payload.deck_id));
+      .then((payload) => setDeck(payload.deck_id))
+      .catch((e)=>{
+        console.log(e);
+      });
   }, [gameOver]);
 
   // this function wil run when the play card button is clicked
