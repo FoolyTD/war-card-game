@@ -116,9 +116,6 @@ img {
 .war-text:hover {
 	cursor: pointer;
 }
-.game-over {
-	/* color:#ff0000; */
-}
 
 /* Score styling */
 
@@ -138,4 +135,105 @@ img {
     height: 100px;
     align-items: center;
     justify-content: center;
+}
+
+/* Start Menu */
+a {
+	text-decoration: none;
+	padding-top: 75px;
+	color: #fff;
+}
+.how-to-play {
+	padding-top: 10px;
+}
+.start {
+	color: #ff0000;
+	font-family: 'Rock Salt';
+    text-shadow: 5px 5px #000;
+}
+.credits {
+	margin-top: -60px;
+}
+
+/* Instructions */
+.title-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 30px; 
+}
+.rules {
+	font-size: xx-large;
+	padding-top: 35px;
+}
+.highlight {
+	color: #ff0000;
+	font-weight: 900;
+	font-size: 20px;
+	text-shadow: 2px 2px #000;
+}
+.page-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 400px;
+	width: 600px;
+	font-size: 10px; 
+	margin-top: auto;
+}
+.page-title {
+	display: flex;
+	justify-content: center;
+	height: 100px;
+	width: 600px;
+	margin-top: -80px;
+	
+}
+li {
+	list-style-type: circle;
+	padding: 5px;
+}
+.navigation-container {
+	display: flex;
+	height: 100px;
+	width: 600px;
+	margin-top: -20px;
+}
+.navigation-item {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex:1;
+	margin-bottom: 20px;
+}
+.nav-btn {
+	padding-bottom: 20px;
+	height: 75px;
+	width: 50px;
+}
+.instruction-play-now {
+	width: 110px;
+	display: round;
+}
+.play-now-btn {
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.play-now-text {
+	font-size: 15px;
+}
+.next-text {
+	margin-left: 13px;
+	font-size: 20px;
+	text-align: center;
+}
+.page-count {
+	font-size: 13px;
+	display: flex;
+	justify-content: center;
+}
+.page-number {
+	font-size: 30px;
 }

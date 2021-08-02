@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./home/home";
 // Login component has code for login screen
 import Login from "./login/login";
+// Import the instructions component to put in the router
+import Instructions from "./instructions/instructions";
 // this is the style sheet
 import "./App.css";
 import { auth } from "./firebase";
@@ -39,6 +41,9 @@ function App() {
         </Route>
 		<Route exact={true} path="/home">
 			<Home />
+		</Route>
+		<Route exact={true} path="/instructions">
+			<Instructions />
 		</Route>
       </Switch>
     </Router>
