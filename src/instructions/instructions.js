@@ -47,12 +47,7 @@ export default function Instructions() {
             </li>
             <li className="card-text">
               In this game, suit does <span className="highlight">NOT</span>{" "}
-              matter, only the <span className="highlight">VALUE</span>
-            </li>
-            <li className="card-text">
-              The player with the{" "}
-              <span className="highlight">HIGHER VALUE WINS</span> and takes
-              both cards
+              matter, only the <span className="highlight">VALUE</span> (Ace is the <span className="highlight">LOWEST</span> King is the <span className="highlight">HIGHEST</span>)
             </li>
           </ul>
         </div>
@@ -61,6 +56,11 @@ export default function Instructions() {
       return (
         <div className="page-container">
           <ul className="page-content">
+          <li className="card-text">
+              The player with the{" "}
+              <span className="highlight">HIGHER VALUE WINS</span> and takes
+              both cards
+            </li>
             <li className="card-text">
               If both cards have the <span className="highlight">SAME VALUE</span> , <span className="highlight">WAR</span> is triggered
             </li>

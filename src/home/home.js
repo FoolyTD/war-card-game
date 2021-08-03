@@ -194,7 +194,7 @@ export default function Home() {
               {!gameStart ? "" :  <p className="big-text">{playerScore}</p>}
               </div>
             </div>
-            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-landing-page/"}} target="_blank"><h1 className="outcome-text credits">Credits</h1></Link> : <div className="steel-texture">
+            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-card-game-landing-page/"}} target="_blank"><h1 className="outcome-text credits">Credits</h1></Link> : <div className="steel-texture">
               {/* If both cards are the same when you press the score button, it will trigger a war
                   The button will say WAR and handleWar function will be called when clicked
               */}
