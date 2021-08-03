@@ -38,7 +38,7 @@ export default function Instructions() {
               <span className="highlight">26</span> for{" "}
               <span className="highlight">YOU</span> &{" "}
               <span className="highlight">26</span> for your{" "}
-              <span className="highlight">OPPONENET</span>)
+              <span className="highlight">OPPONENT</span>)
             </li>
             <li className="card-text">
               Each turn you and your opponent play{" "}
