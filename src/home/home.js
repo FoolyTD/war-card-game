@@ -37,7 +37,7 @@ export default function Home() {
     fetch("http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
       .then((response) => response.json())
       .then((payload) => setDeck(payload.deck_id))
-      .catch((e)=>{
+      .catch((e) => {
         console.log(e);
       });
   }, [gameOver]);
@@ -47,7 +47,7 @@ export default function Home() {
   // then it sets one card as the players and the other as the opponents
   // if also sets the round to over once cards have been set
   const playCards = async () => {
-    if(playerScore > 26 || opponentScore > 26) {
+    if (playerScore > 26 || opponentScore > 26) {
       setGameOver(true);
       return null;
     }
@@ -62,15 +62,18 @@ export default function Home() {
         setOpponentCard(payload.cards[1]);
       })
       .then(setRoundOver(true))
-      // This catch I added to let the user know that something occurred during the fetch and the game will restart 
+      // This catch I added to let the user know that something occurred during the fetch and the game will restart
       // or let the user try again to fetch cards
       .catch(() => {
-        if (warActive && (playerScore + opponentScore >= 42)) {
-          window.alert("We are sorry! An error occurred while fetching your cards. We are going to restart your game, okay?");
+        if (warActive && playerScore + opponentScore >= 42) {
+          window.alert(
+            "We are sorry! An error occurred while fetching your cards. We are going to restart your game, okay?"
+          );
           window.location.reload();
-        }
-        else {
-          window.alert("An error occurred while fetching your cards. Let's try again. Please click the button one more time.");
+        } else {
+          window.alert(
+            "An error occurred while fetching your cards. Let's try again. Please click the button one more time."
+          );
         }
       });
   };
@@ -78,41 +81,44 @@ export default function Home() {
   // this function run once the score button is clicked
   // and will compare the player card and opponent card
   // and set roundOver to false (reactivating Play button)
-  const resolveRound = async () => {
+  const resolveRound = () => {
     // I made this an asyncronous function because I wanted the game to wait for
     //    the state to update
-    await setScore(scoreRound(playerCard.value, opponentCard.value));
+    setScore(scoreRound(playerCard.value, opponentCard.value));
 
     // Because the state was not updating I in itialize value to hold the outcome
     // of the scoreRound function (1, -1, or 0), and use that value for scoring
-    const value = scoreRound(playerCard.value, opponentCard.value)
-    
+    const value = scoreRound(playerCard.value, opponentCard.value);
+
     // If was is active, add 8 cards to player count instead of 2
     if (warActive) {
       setWarActive(false);
-      if (value > 0 ) {
+      if (value > 0) {
         setPlayerScore((currentScore) => currentScore + 8);
-        if(playerScore > 26 || opponentScore > 26) {
+        if (playerScore > 26 || opponentScore > 26) {
           setGameOver(true);
         }
       } else if (value < 0) {
         setOpponentScore((currentScore) => currentScore + 8);
-        if(playerScore > 26 || opponentScore > 26) {
+        if (playerScore > 26 || opponentScore > 26) {
           setGameOver(true);
         }
       }
     }
-    if (value > 0 ) {
+    if (value > 0) {
       setPlayerScore((currentScore) => currentScore + 2);
-      if(playerScore > 26 || opponentScore > 26) {
+      if (playerScore > 26 || opponentScore > 26) {
         setGameOver(true);
       }
     } else if (value < 0) {
       setOpponentScore((currentScore) => currentScore + 2);
-      if(playerScore > 26 || opponentScore > 26) {
+      if (playerScore > 26 || opponentScore > 26) {
         setGameOver(true);
       }
     }
+    // I reset the cards so the animation can play again
+    setPlayerCard(null);
+    setOpponentCard(null);
     setRoundOver(false);
   };
 
@@ -135,13 +141,13 @@ export default function Home() {
   // game over again
   const handleRestart = () => {
     window.location.reload();
-  }
+  };
 
   // this function is attached to the "START" text in the start menu, onClick it
   // will set GameStart to true (displaying the game table)
   const handleStartGame = () => {
     setGameStart(true);
-  }
+  };
 
   return (
     <div className="App">
@@ -150,73 +156,119 @@ export default function Home() {
           <div className="card-display">
             <div className="card-container">
               <div className="player-text">
-              {!gameStart ? "" : <p className="card-text">Your Card</p>}
+                {!gameStart ? "" : <p className="card-text">Your Card</p>}
               </div>
               <div className="card">
-                {gameOver ? "" : opponentCard && playerCard && (
-                  <img src={opponentCard && playerCard.image} alt="" />
-                )}
+                {gameOver
+                  ? ""
+                  : opponentCard &&
+                    playerCard && (
+                      <img class="img-right" src={opponentCard && playerCard.image} alt="" />
+                    )}
               </div>
             </div>
             <div className="card-container">
               <div className="title">
-                {!gameStart ? "" : (score === 0 ? "" : <h1 className="big-text">War</h1>)}
+                {!gameStart ? (
+                  ""
+                ) : score === 0 ? (
+                  ""
+                ) : (
+                  <h1 className="big-text">War</h1>
+                )}
               </div>
               {/* If the game over variable is true (win condition is met), the text GAME OVER will be displayed */}
-              {!gameStart ? <Link to={"/instructions"}><h1 className="outcome-text how-to-play">How To Play</h1></Link> : (gameOver ? <p className="outcome-text">GAME OVER</p> : <p className="outcome-text">
-                {(opponentScore === 0 && playerScore === 0) ? "First to 28 wins!" : score
-                  ? Number(score) === 0
-                    ? "WAR"
-                    : score > 0
-                    ? "Winner Chicken Dinner"
-                    : "You Lose"
-                  : ""}
-              </p>)}
-              {!gameStart ? <h1 onClick={handleStartGame} className="outcome-text start">START</h1> : ""}
+              {!gameStart ? <Link to={"/shop"}>Shop</Link> : ""}
+              {!gameStart ? (
+                <Link to={"/instructions"}>
+                  <h1 className="outcome-text how-to-play">How To Play</h1>
+                </Link>
+              ) : gameOver ? (
+                <p className="outcome-text">GAME OVER</p>
+              ) : (
+                <p className="outcome-text">
+                  {opponentScore === 0 && playerScore === 0
+                    ? "First to 28 wins!"
+                    : score
+                    ? Number(score) === 0
+                      ? "WAR"
+                      : score > 0
+                      ? "Winner Chicken Dinner"
+                      : "You Lose"
+                    : ""}
+                </p>
+              )}
+              {!gameStart ? (
+                <h1 onClick={handleStartGame} className="outcome-text start">
+                  START
+                </h1>
+              ) : (
+                ""
+              )}
             </div>
             <div className="card-container">
               <div className="player-text">
                 {!gameStart ? "" : <p className="card-text">Opponent's Card</p>}
               </div>
               <div className="card">
-                {gameOver? "" : playerCard && opponentCard && (
-                  <img src={playerCard && opponentCard.image} alt="" />
-                )}
+                {gameOver
+                  ? ""
+                  : playerCard &&
+                    opponentCard && (
+                      <img class="img-left" src={playerCard && opponentCard.image} alt="" />
+                    )}
               </div>
             </div>
           </div>
           <div className="btn-container">
             <div className="score-container">
-            <div className="score-text">
-            {!gameStart ? "" : <h1 className="card-text">Card Count</h1>}
+              <div className="score-text">
+                {!gameStart ? "" : <h1 className="card-text">Card Count</h1>}
               </div>
               <div className="score-count">
-              {!gameStart ? "" :  <p className="big-text">{playerScore}</p>}
+                {!gameStart ? "" : <p className="big-text">{playerScore}</p>}
               </div>
             </div>
-            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-card-game-landing-page/"}} target="_blank"><h1 className="outcome-text credits">Credits</h1></Link> : <div className="steel-texture">
-              {/* If both cards are the same when you press the score button, it will trigger a war
+            {!gameStart ? (
+              <Link
+                to={{
+                  pathname:
+                    "https://foolytd.github.io/war-card-game-landing-page/",
+                }}
+                target="_blank"
+              >
+                <h1 className="outcome-text credits">Credits</h1>
+              </Link>
+            ) : (
+              <div className="steel-texture">
+                {/* If both cards are the same when you press the score button, it will trigger a war
                   The button will say WAR and handleWar function will be called when clicked
               */}
-              {score === 0 ? (
-                <h1 onClick={handleWar} className="big-text war-text">
-                  War
-                </h1>
-              ) : (gameOver ? <button onClick={handleRestart} className="btn game-over">Restart</button> :
-                <button
-                  className="btn"
-                  onClick={roundOver ? resolveRound : playCards}
-                >
-                  {roundOver ? "Score" : "Deal"}
-                </button>
-              )}
-            </div>}
+                {score === 0 ? (
+                  <h1 onClick={handleWar} className="big-text war-text">
+                    War
+                  </h1>
+                ) : gameOver ? (
+                  <button onClick={handleRestart} className="btn game-over">
+                    Restart
+                  </button>
+                ) : (
+                  <button
+                    className="btn"
+                    onClick={roundOver ? resolveRound : playCards}
+                  >
+                    {/* This line will say finish when the game is over instead of deal */}
+                    {roundOver ? "Score" : (playerScore > 26 || opponentScore > 26 ? "Finish" : "Deal")}
+                  </button>
+                )}
+              </div>
+            )}
             <div className="score-container">
               <div className="score-text">
-              {!gameStart ? "" : <h1 className="card-text">Card Count</h1>}
+                {!gameStart ? "" : <h1 className="card-text">Card Count</h1>}
               </div>
               <div className="score-count">
-              {!gameStart ? "" : <p className="big-text">{opponentScore}</p>}
+                {!gameStart ? "" : <p className="big-text">{opponentScore}</p>}
               </div>
             </div>
           </div>

@@ -16,6 +16,16 @@
  /* Playing Table */
 .table-container {
 	background-image: url("/src/images/table-texture.jpg");
+	/* background-image: url("https://images.unsplash.com/photo-1542732056-648731297c97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"); */
+	height: 600px;
+	width: 600px;
+	margin: auto;
+    background-size: contain;
+    overflow: hidden;
+	border-radius: 10%;
+}
+.table-container-1 {
+	background-image: url("https://images.unsplash.com/photo-1542732056-648731297c97?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
 	height: 600px;
 	width: 600px;
 	margin: auto;
@@ -47,6 +57,12 @@ img {
 	box-shadow: 2px 2px rgb(255 0 0);
 	border-radius: 10px;
 }
+.img-left {
+	animation: left-to-right .8s;
+}
+.img-right {
+	animation: right-to-left .8s;
+}
 .player-text {
 	height: 100px;
 }
@@ -64,6 +80,24 @@ img {
 	height: 400px;
 	width: 600px;
 }
+/* Card animation when game begins */
+@keyframes left-to-right {
+	0% {
+		transform:translateX(100%);
+	}
+	100% {
+		transform:translateX(0);
+	}
+}
+@keyframes right-to-left {
+	0% {
+		transform:translateX(-100%);
+	}
+	100% {
+		transform:translateX(0);
+	}
+}
+
 
 /* Outcome Styling */
 .outcome-text {
