@@ -32,7 +32,7 @@ export default function scoreRound(playerCard,opponentCard) {
     }
     
     // I convert the playerCard string and opponentCard string to a number
-    // because a comparison of the strings was not behaving a anticipated 
+    // because a comparison of the strings was not behaving as anticipated 
     if (Number(playerCard) > Number(opponentCard)) {
         return 1;
     } else if (Number(playerCard) < Number(opponentCard)) {

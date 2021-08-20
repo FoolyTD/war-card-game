@@ -3,14 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
  /* Title */
  .title {
+	 display: flex;
 	 text-align: center;
+	 width: 50%;
  }
  .big-text {
 	font-family: 'Rock Salt', cursive;	 
 	font-size: 3em;
 	color:#ff0000;
-	/* text-shadow: 2px 2px rgb(114, 10, 31); */
 	text-shadow: 5px 5px #000;
+	margin: 0;
+ }
+ 
+ .big-big-text {
+	font-family: 'Rock Salt', cursive;	 
+	font-size: 5em;
+	color:#ff0000;
+	text-shadow: 5px 5px #000;
+	margin: 0;
  }
 
  /* Playing Table */

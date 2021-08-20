@@ -37,7 +37,7 @@ export default function Home() {
       .then((payload) => setDeck(payload.deck_id));
   }, [gameOver]);
 
-  // this function wil run when the play card button is clicked
+  // this function will run when the play card button is clicked
   // it makes a fetch call to draw two cards from our deck at random
   // then it sets one card as the players and the other as the opponents
   // if also sets the round to over once cards have been set
@@ -59,16 +59,16 @@ export default function Home() {
       .then(setRoundOver(true));
   };
 
-  // this function run once the score button is clicked
-  // and will compare the player card and opponent card
-  // and set roundOver to false (reactivating Play button)
+  /* this function run once the score button is clicked
+  and will compare the player card and opponent card
+  and set roundOver to false (reactivating Play button) */
   const resolveRound = async () => {
-    // I made this an asyncronous function because I wanted the game to wait for
-    //    the state to update
+    /* I made this an asyncronous function because I wanted the game to wait for
+    the state to update */
     await setScore(scoreRound(playerCard.value, opponentCard.value));
 
-    // Because the state was not updating I in itialize value to hold the outcome
-    // of the scoreRound function (1, -1, or 0), and use that value for scoring
+    /* Because the state was not updating I initialize value to hold the outcome
+    of the scoreRound function (1, -1, or 0), and use that value for scoring*/
     const value = scoreRound(playerCard.value, opponentCard.value)
     
     // If was is active, add 8 cards to player count instead of 2
@@ -101,14 +101,14 @@ export default function Home() {
   };
 
   // this will run a fetch call to draw 8 cards, then set playerCard to
-  // the 7th item in the return array and opponentCard to 8th item in the array
+  // the 4th item in the return array and opponentCard to 8th item in the array
   const handleWar = async () => {
     setWarActive(true);
     setScore(null);
     await fetch(`http://deckofcardsapi.com/api/deck/${deck}/draw/?count=8`)
       .then((response) => response.json())
       .then((payload) => {
-        setPlayerCard(payload.cards[6]);
+        setPlayerCard(payload.cards[3]);
         setOpponentCard(payload.cards[7]);
       })
       .then(setRoundOver(true));
@@ -128,7 +128,7 @@ export default function Home() {
           <div className="card-display">
             <div className="card-container">
               <div className="player-text">
-                <p className="card-text">Your Card</p>
+                {gameStart ? <p className="card-text">Your Card</p> : ""}
               </div>
               <div className="card">
                 {gameOver ? "" : opponentCard && playerCard && (
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
             <div className="card-container">
               <div className="title">
-                {score === 0 ? "" : <h1 className="big-text">War</h1>}
+                {gameStart ? "" : <h1 className="big-big-text">War</h1>}
               </div>
               {/* If the game over variable is true (win condition is met), the text GAME OVER will be displayed */}
               {gameOver ? <p className="outcome-text">GAME OVER</p> : <p className="outcome-text">
@@ -153,7 +153,7 @@ export default function Home() {
             </div>
             <div className="card-container">
               <div className="player-text">
-                <p className="card-text">Opponent's Card</p>
+                {gameStart ? <p className="card-text">Opponent's Card</p> : ""}
               </div>
               <div className="card">
                 {gameOver? "" : playerCard && opponentCard && (
@@ -165,10 +165,10 @@ export default function Home() {
           <div className="btn-container">
             <div className="score-container">
             <div className="score-text">
-                <h1 className="card-text">Card Count</h1>
+                {gameStart ?<h1 className="card-text">Card Count</h1> : ""}
               </div>
               <div className="score-count">
-              <p className="big-text">{playerScore}</p>
+              {gameStart ? <p className="big-text">{playerScore}</p> : ""}
               </div>
             </div>
             <div className="steel-texture">
@@ -190,10 +190,10 @@ export default function Home() {
             </div>
             <div className="score-container">
               <div className="score-text">
-                <h1 className="card-text">Card Count</h1>
+                { gameStart ? <h1 className="card-text">Card Count</h1> : ""}
               </div>
               <div className="score-count">
-              <p className="big-text">{opponentScore}</p>
+              { gameStart ? <p className="big-text">{opponentScore}</p> : ""}
               </div>
             </div>
           </div>
