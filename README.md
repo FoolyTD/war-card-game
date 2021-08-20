@@ -121,5 +121,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # war-card-game
+PLAY NOW: [war card game](https://war-card-game-ten.vercel.app/home)
+
 # war-landing-page
+VISIT: [WAR Landing Page](https://foolytd.github.io/war-landing-page/)
+
