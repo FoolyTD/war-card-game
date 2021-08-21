@@ -150,7 +150,7 @@ export default function Home() {
           <div className="card-display">
             <div className="card-container">
               <div className="player-text">
-                {gameStart ? <p className="card-text">Your Card</p> : ""}
+                {playerCard ? <p className="card-text">Your Card</p> : ""}
               </div>
               <div className="card">
                 {gameOver ? "" : opponentCard && playerCard && (
@@ -176,7 +176,7 @@ export default function Home() {
             </div>
             <div className="card-container">
               <div className="player-text">
-                {gameStart ? <p className="card-text">Opponent's Card</p> : ""}
+                {opponentCard ? <p className="card-text">Opponent's Card</p> : ""}
               </div>
               <div className="card">
                 {gameOver? "" : playerCard && opponentCard && (
@@ -188,13 +188,13 @@ export default function Home() {
           <div className="btn-container">
             <div className="score-container">
             <div className="score-text">
-                {gameStart ?<h1 className="card-text">Card Count</h1> : ""}
+                {playerCard ?<h1 className="card-text">Card Count</h1> : ""}
               </div>
               <div className="score-count">
-              {gameStart ? <p className="big-text">{playerScore}</p> : ""}
+              {playerCard ? <p className="big-text">{playerScore}</p> : ""}
               </div>
             </div>
-            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-card-game-landing-page/"}} target="_blank"><h1 className="outcome-text credits">Credits</h1></Link> : <div className="steel-texture">
+            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-card-game-landing-page/"}} target="_blank"><h1 className="outcome-text">Credits</h1></Link> : <div className="steel-texture">
               {/* If both cards are the same when you press the score button, it will trigger a war
                   The button will say WAR and handleWar function will be called when clicked
               */}
@@ -213,10 +213,10 @@ export default function Home() {
             </div>}
             <div className="score-container">
               <div className="score-text">
-                { gameStart ? <h1 className="card-text">Card Count</h1> : ""}
+                { opponentCard ? <h1 className="card-text">Card Count</h1> : ""}
               </div>
               <div className="score-count">
-              { gameStart ? <p className="big-text">{opponentScore}</p> : ""}
+              { opponentCard ? <p className="big-text">{opponentScore}</p> : ""}
               </div>
             </div>
           </div>

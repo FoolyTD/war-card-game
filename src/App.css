@@ -5,7 +5,6 @@
  .title {
 	 display: flex;
 	 text-align: center;
-	 width: 50%;
  }
  .big-text {
 	font-family: 'Rock Salt', cursive;	 
@@ -26,7 +25,7 @@
  /* Playing Table */
 .table-container {
 	background-image: url("/src/images/table-texture.jpg");
-	height: 600px;
+	/* height: 600px; */
 	width: 600px;
 	margin: auto;
     background-size: contain;
@@ -41,15 +40,16 @@
 
 /* Card styling */
 .card {
+	display: flex;
 	width: 100px;
-	margin: auto;
 }
 .card-container {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 200px;
-	height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
 }
 
 img {
@@ -58,7 +58,7 @@ img {
 	border-radius: 10px;
 }
 .player-text {
-	height: 100px;
+	margin-bottom: 7px;
 }
 .card-text {
 	font-family: 'Yomogi', cursive;	
@@ -66,12 +66,12 @@ img {
 	color: #FFF;
 	font-weight: bold;
 	text-shadow: 3px 3px #000;
-
+	margin: 7px 20px 0px 20px;
 }
 .card-display {
 	display: flex;
 	flex-direction: row;
-	height: 400px;
+	/* height: 400px; */
 	width: 600px;
 }
 
@@ -91,9 +91,7 @@ img {
 	display: flex;
 	justify-content: center;
 	width: 600px;
-	height: 200px;
-	/* flex-direction: row; */
-	/* padding-top: 60px; */
+	/* height: 200px; */
 }
 
 .btn {
@@ -112,7 +110,7 @@ img {
 
 .steel-texture {
 	background-image: url("/src/images/button-texture.jpg");
-	height: 100px;
+	/* height: 100px; */
 	width: 200px;
 	background-size: cover;
 	display: flex;
@@ -154,7 +152,7 @@ button:hover {
 /* Start Menu */
 a {
 	text-decoration: none;
-	padding-top: 75px;
+	/* padding-top: 75px; */
 	color: #fff;
 }
 .how-to-play {
@@ -167,9 +165,6 @@ a {
 }
 .start:hover {
 	cursor: pointer;
-}
-.credits {
-	margin-top: -60px;
 }
 
 /* Instructions */
@@ -193,7 +188,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 400px;
+	/* height: 400px; */
 	width: 600px;
 	font-size: 10px; 
 	margin-top: auto;
@@ -201,7 +196,7 @@ a {
 .page-title {
 	display: flex;
 	justify-content: center;
-	height: 100px;
+	/* height: 100px; */
 	width: 600px;
 	margin-top: -80px;
 	
@@ -212,7 +207,7 @@ li {
 }
 .navigation-container {
 	display: flex;
-	height: 100px;
+	/* height: 100px; */
 	width: 600px;
 	margin-top: -20px;
 }
@@ -225,7 +220,7 @@ li {
 }
 .nav-btn {
 	padding-bottom: 20px;
-	height: 75px;
+	/* height: 75px; */
 	width: 50px;
 }
 .instruction-play-now {
@@ -233,7 +228,7 @@ li {
 	display: round;
 }
 .play-now-btn {
-	height: 20px;
+	/* height: 20px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
