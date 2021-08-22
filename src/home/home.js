@@ -145,15 +145,15 @@ export default function Home() {
 
   return (
     <div className="App">
-      <div>
+      <div id="border">
         <section className="table-container">
           <div className="card-display">
             <div className="card-container">
               <div className="player-text">
-                {playerCard ? <p className="card-text">Your Card</p> : ""}
+                {playerCard ? <p className="card-text">You</p> : ""}
               </div>
               <div className="card">
-                {gameOver ? "" : opponentCard && playerCard && (
+                {gameOver ? <div className="space"></div> : opponentCard && playerCard && (
                   <img src={opponentCard && playerCard.image} alt="" />
                 )}
               </div>
@@ -176,10 +176,10 @@ export default function Home() {
             </div>
             <div className="card-container">
               <div className="player-text">
-                {opponentCard ? <p className="card-text">Opponent's Card</p> : ""}
+                {opponentCard ? <p className="card-text">Opponent</p> : ""}
               </div>
               <div className="card">
-                {gameOver? "" : playerCard && opponentCard && (
+                {gameOver? <div className="space"></div> : playerCard && opponentCard && (
                   <img src={playerCard && opponentCard.image} alt="" />
                 )}
               </div>
