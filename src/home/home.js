@@ -42,7 +42,7 @@ export default function Home() {
       });
   }, [gameOver]);
 
-  // this function wil run when the play card button is clicked
+  // this function will run when the play card button is clicked
   // it makes a fetch call to draw two cards from our deck at random
   // then it sets one card as the players and the other as the opponents
   // if also sets the round to over once cards have been set
@@ -75,16 +75,16 @@ export default function Home() {
       });
   };
 
-  // this function run once the score button is clicked
-  // and will compare the player card and opponent card
-  // and set roundOver to false (reactivating Play button)
+  /* this function run once the score button is clicked
+  and will compare the player card and opponent card
+  and set roundOver to false (reactivating Play button) */
   const resolveRound = async () => {
-    // I made this an asyncronous function because I wanted the game to wait for
-    //    the state to update
+    /* I made this an asyncronous function because I wanted the game to wait for
+    the state to update */
     await setScore(scoreRound(playerCard.value, opponentCard.value));
 
-    // Because the state was not updating I in itialize value to hold the outcome
-    // of the scoreRound function (1, -1, or 0), and use that value for scoring
+    /* Because the state was not updating I initialize value to hold the outcome
+    of the scoreRound function (1, -1, or 0), and use that value for scoring*/
     const value = scoreRound(playerCard.value, opponentCard.value)
     
     // If was is active, add 8 cards to player count instead of 2
@@ -117,14 +117,14 @@ export default function Home() {
   };
 
   // this will run a fetch call to draw 8 cards, then set playerCard to
-  // the 7th item in the return array and opponentCard to 8th item in the array
+  // the 4th item in the return array and opponentCard to 8th item in the array
   const handleWar = async () => {
     setWarActive(true);
     setScore(null);
     await fetch(`http://deckofcardsapi.com/api/deck/${deck}/draw/?count=8`)
       .then((response) => response.json())
       .then((payload) => {
-        setPlayerCard(payload.cards[6]);
+        setPlayerCard(payload.cards[3]);
         setOpponentCard(payload.cards[7]);
       })
       .then(setRoundOver(true));
@@ -145,22 +145,22 @@ export default function Home() {
 
   return (
     <div className="App">
-      <div>
+      <div id="border">
         <section className="table-container">
           <div className="card-display">
             <div className="card-container">
               <div className="player-text">
-              {!gameStart ? "" : <p className="card-text">Your Card</p>}
+                {playerCard ? <p className="card-text">You</p> : ""}
               </div>
               <div className="card">
-                {gameOver ? "" : opponentCard && playerCard && (
+                {gameOver ? <div className="space"></div> : opponentCard && playerCard && (
                   <img src={opponentCard && playerCard.image} alt="" />
                 )}
               </div>
             </div>
             <div className="card-container">
               <div className="title">
-                {!gameStart ? "" : (score === 0 ? "" : <h1 className="big-text">War</h1>)}
+                {gameStart ? "" : <h1 className="big-big-text">War</h1>}
               </div>
               {/* If the game over variable is true (win condition is met), the text GAME OVER will be displayed */}
               {!gameStart ? <Link to={"/instructions"}><h1 className="outcome-text how-to-play">How To Play</h1></Link> : (gameOver ? <p className="outcome-text">GAME OVER</p> : <p className="outcome-text">
@@ -176,10 +176,10 @@ export default function Home() {
             </div>
             <div className="card-container">
               <div className="player-text">
-                {!gameStart ? "" : <p className="card-text">Opponent's Card</p>}
+                {opponentCard ? <p className="card-text">Opponent</p> : ""}
               </div>
               <div className="card">
-                {gameOver? "" : playerCard && opponentCard && (
+                {gameOver? <div className="space"></div> : playerCard && opponentCard && (
                   <img src={playerCard && opponentCard.image} alt="" />
                 )}
               </div>
@@ -188,13 +188,13 @@ export default function Home() {
           <div className="btn-container">
             <div className="score-container">
             <div className="score-text">
-            {!gameStart ? "" : <h1 className="card-text">Card Count</h1>}
+                {playerCard ?<h1 className="card-text">Card Count</h1> : ""}
               </div>
               <div className="score-count">
-              {!gameStart ? "" :  <p className="big-text">{playerScore}</p>}
+              {playerCard ? <p className="big-text">{playerScore}</p> : ""}
               </div>
             </div>
-            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-card-game-landing-page/"}} target="_blank"><h1 className="outcome-text credits">Credits</h1></Link> : <div className="steel-texture">
+            {!gameStart? <Link to={{ pathname: "https://foolytd.github.io/war-card-game-landing-page/"}} target="_blank"><h1 className="outcome-text">Credits</h1></Link> : <div className="steel-texture">
               {/* If both cards are the same when you press the score button, it will trigger a war
                   The button will say WAR and handleWar function will be called when clicked
               */}
@@ -213,10 +213,10 @@ export default function Home() {
             </div>}
             <div className="score-container">
               <div className="score-text">
-              {!gameStart ? "" : <h1 className="card-text">Card Count</h1>}
+                { opponentCard ? <h1 className="card-text">Card Count</h1> : ""}
               </div>
               <div className="score-count">
-              {!gameStart ? "" : <p className="big-text">{opponentScore}</p>}
+              { opponentCard ? <p className="big-text">{opponentScore}</p> : ""}
               </div>
             </div>
           </div>

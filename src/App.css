@@ -2,23 +2,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
  /* Title */
+ html,
+ body {
+	 width: 100%;
+	 height: 100%;
+	 margin: 0;
+ }
+
+ .App {
+	 height: 100%;
+	 width: 100%;
+ }
+
  .title {
+	 display: flex;
 	 text-align: center;
  }
+ #root {
+	width: 100%;
+	height: 100%;
+ }
+
+ #border {
+	 height: 100%;
+ }
+
  .big-text {
 	font-family: 'Rock Salt', cursive;	 
 	font-size: 3em;
 	color:#ff0000;
-	/* text-shadow: 2px 2px rgb(114, 10, 31); */
 	text-shadow: 5px 5px #000;
+	margin: 0;
+ }
+ 
+ .big-big-text {
+	font-family: 'Rock Salt', cursive;	 
+	font-size: 5em;
+	color:#ff0000;
+	text-shadow: 5px 5px #000;
+	margin: 0;
  }
 
  /* Playing Table */
 .table-container {
 	background-image: url("/src/images/table-texture.jpg");
-	height: 600px;
-	width: 600px;
-	margin: auto;
+	height: 100%;
+	width: 100%;
+	/* margin: auto; */
     background-size: contain;
     overflow: hidden;
 	border-radius: 10%;
@@ -31,15 +61,17 @@
 
 /* Card styling */
 .card {
-	width: 100px;
-	margin: auto;
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
 .card-container {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 200px;
-	height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 33%;
 }
 
 img {
@@ -48,7 +80,7 @@ img {
 	border-radius: 10px;
 }
 .player-text {
-	height: 100px;
+	/* margin-bottom: 7px; */
 }
 .card-text {
 	font-family: 'Yomogi', cursive;	
@@ -56,34 +88,34 @@ img {
 	color: #FFF;
 	font-weight: bold;
 	text-shadow: 3px 3px #000;
-
+	margin: 0;
 }
 .card-display {
 	display: flex;
-	flex-direction: row;
-	height: 400px;
-	width: 600px;
+	justify-content: space-around;
+
+	align-items: center;
+	height: 75%;
+	/* width: 600px; */
 }
 
 /* Outcome Styling */
 .outcome-text {
-	font-family: 'Yomogi', cursive;	
-	text-shadow: 1px 1px;
-	margin: auto;
-	font-size: 45px;
-	color:#fff;
-	text-shadow: 3px 3px #000;
-
+    font-family: 'Yomogi', cursive;
+    text-shadow: 1px 1px;
+    margin: 0;
+    font-size: 45px;
+    color: #fff;
+    text-shadow: 3px 3px #000;
+    text-align: center;
 }
 
 /* Button Styling */
 .btn-container {
 	display: flex;
-	justify-content: center;
-	width: 600px;
-	height: 200px;
-	/* flex-direction: row; */
-	/* padding-top: 60px; */
+	justify-content: space-around;
+	align-items: center;
+	height: 25%;
 }
 
 .btn {
@@ -102,7 +134,7 @@ img {
 
 .steel-texture {
 	background-image: url("/src/images/button-texture.jpg");
-	height: 100px;
+	/* height: 100px; */
 	width: 200px;
 	background-size: cover;
 	display: flex;
@@ -129,22 +161,24 @@ button:hover {
     text-align: center;
     font-size: smaller;
     justify-content: center;
-    width: 200px;
+    /* width: 200px; */
 }
 .score-text {
 	height: 50px;
 }
 .score-count {
 	display: flex;
-    height: 100px;
+    /* height: 100px; */
     align-items: center;
     justify-content: center;
 }
 
 /* Start Menu */
 a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-decoration: none;
-	padding-top: 75px;
 	color: #fff;
 }
 .how-to-play {
@@ -157,9 +191,6 @@ a {
 }
 .start:hover {
 	cursor: pointer;
-}
-.credits {
-	margin-top: -60px;
 }
 
 /* Instructions */
@@ -183,7 +214,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 400px;
+	/* height: 400px; */
 	width: 600px;
 	font-size: 10px; 
 	margin-top: auto;
@@ -191,7 +222,7 @@ a {
 .page-title {
 	display: flex;
 	justify-content: center;
-	height: 100px;
+	/* height: 100px; */
 	width: 600px;
 	margin-top: -80px;
 	
@@ -202,7 +233,7 @@ li {
 }
 .navigation-container {
 	display: flex;
-	height: 100px;
+	/* height: 100px; */
 	width: 600px;
 	margin-top: -20px;
 }
@@ -215,7 +246,7 @@ li {
 }
 .nav-btn {
 	padding-bottom: 20px;
-	height: 75px;
+	/* height: 75px; */
 	width: 50px;
 }
 .instruction-play-now {
@@ -223,7 +254,7 @@ li {
 	display: round;
 }
 .play-now-btn {
-	height: 20px;
+	/* height: 20px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -246,4 +277,8 @@ li {
 }
 .page-number {
 	font-size: 30px;
+}
+
+.space {
+	height: 10em;
 }
